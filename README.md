@@ -12,7 +12,7 @@ The WRF Model is open-source code in the public domain, and its use is unrestric
 ### WRF-4.4.2 ###
 To output ATHFTEN
 
-Registry
+I have modified Registry
 
 state    real  RTHFTEN          ikj     misc        1         -      r        "RTHFTEN"               "TOTAL ADVECTIVE POTENTIAL TEMPERATURE TENDENCY"  "K s-1"
 
