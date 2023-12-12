@@ -651,10 +651,10 @@ SUBROUTINE rk_tendency ( config_flags, rk_step,                           &
 
    ENDIF
      
-   IF ( config_flags%cu_physics == GDSCHEME  .OR.     &
-        config_flags%cu_physics == GFSCHEME  .OR.     &
-        config_flags%cu_physics == G3SCHEME  .OR.     &
-        config_flags%cu_physics == NTIEDTKESCHEME )  THEN     ! NTiedtke
+  ! IF ( config_flags%cu_physics == GDSCHEME  .OR.     &       ! commented by yueqin
+  !      config_flags%cu_physics == GFSCHEME  .OR.     &       ! commented by yueqin
+  !      config_flags%cu_physics == G3SCHEME  .OR.     &       ! commented by yueqin
+  !      config_flags%cu_physics == NTIEDTKESCHEME )  THEN     ! NTiedtke ! commented by yueqin
 
      ! theta advection only:
 
@@ -663,7 +663,7 @@ SUBROUTINE rk_tendency ( config_flags, rk_step,                           &
                     ims, ime, jms, jme, kms, kme,    &
                     its, ite, jts, jte, kts, kte     )
 
-   END IF
+ !  END IF  ! commented by yueqin
 
    CALL rhs_ph( ph_tend, u, v, wwE, ph, ph, phb, w, &
                 mut, muu, muv,                     &

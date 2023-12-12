@@ -2106,7 +2106,7 @@ state     real    cldmask        ij       dyn_em      1         -    i01h "cldma
 state     real    cldtopz        ij       dyn_em      1         -    i01h "cldtopz"  "Cloud top height above sea level" "m asl"
 state     real    cldbasez       ij       dyn_em      1         -    i01h "cldbasez" "Cloud base height above ground level" "m agl"
 
-# Accumulated physics tendencies
+# Accumulated physics tendencies (ATHFTEN added by yueqin)
 state    real  ATHMPTEN        ikj       misc     1         -      h       "ATHMPTEN"        "ACCUMULATED THETA TENDENCY DUE TO MICROPHY SCHEME"    "K "
 state    real  AQVMPTEN        ikj       misc     1         -      h       "AQVMPTEN"        "ACCUMULATED Q_V TENDENCY DUE TO MICROPHY SCHEME"      "kg kg-1 "
 state    real  ATHCUTEN        ikj       misc     1         -      h       "ATHCUTEN"        "ACCUMULATED THETA TENDENCY DUE TO CUMULUS SCHEME"     "K "
@@ -2123,6 +2123,7 @@ state    real  AUBLTEN         ikj       misc     1         -      h       "AUBL
 state    real  AVBLTEN         ikj       misc     1         -      h       "AVBLTEN"         "ACCUMULATED Y WIND TENDENCY DUE TO PBL SCHEME"        "m s-1 "
 state    real  ATHRATENLW      ikj       misc     1         -      h       "ATHRATENLW"      "ACCUMULATED THETA TENDENCY DUE TO LW RADIATION SCHEME"   "K "
 state    real  ATHRATENSW      ikj       misc     1         -      h       "ATHRATENSW"      "ACCUMULATED THETA TENDENCY DUE TO SW RADIATION SCHEME"   "K "
+state    real  ATHFTEN         ikj       misc     1         -      h       "ATHFTEN"         "ACCUMULATED THETA TENDENCY DUE TO TOTAL ADVECTION"       "K "
 #
 #---------------------------------------------------------------------------------------------------------------------------------------
 #                                               
@@ -3335,8 +3336,8 @@ package   seabreeze2d_x  ideal_case==8               -            -
 package   les            ideal_case==9               -            -
 # WRF-Chem specific diagnostics
 package   clnatmdiag     calc_clean_atm_diag==1      -            state:SWUPTCLN,SWDNTCLN,SWUPBCLN,SWDNBCLN,LWUPTCLN,LWDNTCLN,LWUPBCLN,LWDNBCLN 
-#
-package   acc_phys_tend  acc_phy_tend==1             -            state:ATHMPTEN,AQVMPTEN,ATHCUTEN,AQVCUTEN,AUCUTEN,AVCUTEN,ATHSHTEN,AQVSHTEN,AUSHTEN,AVSHTEN,ATHBLTEN,AQVBLTEN,AUBLTEN,AVBLTEN,ATHRATENLW,ATHRATENSW
+# (ATHFTEN--added by yueqin)
+package   acc_phys_tend  acc_phy_tend==1             -            state:ATHMPTEN,AQVMPTEN,ATHCUTEN,AQVCUTEN,AUCUTEN,AVCUTEN,ATHSHTEN,AQVSHTEN,AUSHTEN,AVSHTEN,ATHBLTEN,AQVBLTEN,AUBLTEN,AVBLTEN,ATHRATENLW,ATHRATENSW,ATHFTEN
 
 #---------------------------------------------------------------------------------------------------------------------------------------
 ## communications                                               
