@@ -9,3 +9,17 @@ Information regarding WRF Model citations (including a DOI) can be found here: [
 The WRF Model is open-source code in the public domain, and its use is unrestricted. The name "WRF", however, is a registered trademark of the University Corporation for Atmospheric Research. The WRF public domain notice and related information may be found here: [https://www2.mmm.ucar.edu/wrf/users/public.html](https://www2.mmm.ucar.edu/wrf/users/public.html).
 
 
+### WRF-4.4.2 ###
+To output ATHFTEN
+
+Registry
+
+state    real  RTHFTEN          ikj     misc        1         -      r        "RTHFTEN"               "TOTAL ADVECTIVE POTENTIAL TEMPERATURE TENDENCY"  "K s-1"
+
+state    real  ATHFTEN         ikj       misc     1         -      h       "ATHFTEN"         "ACCUMULATED THETA TENDENCY DUE TO TOTAL ADVECTION"       "K "
+
+I modified the following scripts:
+"WRF/phys/module_diag_misc.F",
+"WRF/phys/module_diagnostics_driver.F",
+"WRF/dyn_em/module_big_step_utilities_em.F",
+"WRF/dyn_em/module_em.F"
